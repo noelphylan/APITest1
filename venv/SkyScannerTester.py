@@ -12,7 +12,7 @@ def createSkyScannerSession():
         'content-type': "application/x-www-form-urlencoded"
     }
 
-    """response = requests.request("POST", url, data=payload, headers=headers)
+    response = requests.request("POST", url, data=payload, headers=headers)
 
     print(response.status_code)
 
@@ -22,9 +22,9 @@ def createSkyScannerSession():
 
     location = response.headers['location']
 
-    sessionKey = (location[64:])"""
+    sessionKey = (location[64:])
 
-    sessionKey = "noel"
+    #sessionKey = "noel"
     print (sessionKey)
 
     #parsed_json = (json.loads(json_data))
@@ -45,9 +45,9 @@ def pollSkyScannerSession(sessionKey):
     }
 
     # print(response.text)
-    #response = requests.request("GET", url, headers=headers, params=querystring)
+    response = requests.request("GET", url, headers=headers, params=querystring)
 
-    print(sessionKey)
+    print(response)
 
 if __name__ == '__main__':
     sessionKey = createSkyScannerSession()
