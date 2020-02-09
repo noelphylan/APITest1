@@ -57,20 +57,3 @@ def step_impl(context):
 @then('I receive valid Response')
 def step_impl(context):
     print(context.response.status_code)
-
-
-def pollSkyScannerSession(sessionKey):
-    url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/%7B"+sessionKey+"%7D"
-
-    querystring = {"pageIndex": "0", "pageSize": "10"}
-
-
-
-    # print(response.text)
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response)
-
-if __name__ == '__main__':
-    sessionKey = createSkyScannerSession()
-    pollSkyScannerSession(sessionKey)
