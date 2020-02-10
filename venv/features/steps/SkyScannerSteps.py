@@ -39,7 +39,7 @@ def step_impl(context):
     response = requests.request("POST", context.uri, data=payload, headers=context.headers, verify=False)
     context.response = response
 
-@when('Send a GET HTTP request')
+@when('Send a GET HTTP request using the session Key')
 def step_impl(context):
     querystring = {"pageIndex": "0", "pageSize": "10"}
     # print(response.text)
