@@ -9,7 +9,7 @@ def step_impl(context):
     uri = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0";
     context.uri = uri
 
-@given('I Set GET skyscanner service api endpoint')
+@given('I Set GET skyscanner service api endpoint using the session Key')
 def step_impl(context):
     uri = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/%7B" + context.sessionKey + "%7D"
 
@@ -20,7 +20,7 @@ def step_impl(context):
 def step_impl(context):
     headers = {
         'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-        'x-rapidapi-key': "ea278fe431msh087b44e84f33849p1b9677jsnea2b4c6cd4b8",
+        'x-rapidapi-key': "Get This Key When You Sign Up To Skyscanner Service RapidAPI you get 10 free requests per day",
         'content-type': "application/x-www-form-urlencoded"
     }
     context.headers = headers
@@ -39,7 +39,7 @@ def step_impl(context):
     response = requests.request("POST", context.uri, data=payload, headers=context.headers, verify=False)
     context.response = response
 
-@when('Send a GET HTTP request using the session Key')
+@when('Send a GET HTTP request')
 def step_impl(context):
     querystring = {"pageIndex": "0", "pageSize": "10"}
     # print(response.text)

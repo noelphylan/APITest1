@@ -9,7 +9,7 @@ Scenario: Post a skyscanner query and return a session key
 
 Scenario: Retrieve the skyscanner session using the session key
 
-	Given I Set GET skyscanner service api endpoint
+	Given I Set GET skyscanner service api endpoint using the session Key
 	When I Set GET request HEADER
-	    And Send a GET HTTP request using the session Key
+	    And Send a GET HTTP request
 	Then I receive valid Response
