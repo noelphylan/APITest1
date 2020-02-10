@@ -53,7 +53,9 @@ def step_impl(context):
     location = context.response.headers['location']
     sessionKey = (location[64:])
     context.sessionKey = sessionKey
+    assert context.sessionKey is not None
 
 @then('I receive valid Response')
 def step_impl(context):
     print(context.response.status_code)
+    assert context.response is not None
